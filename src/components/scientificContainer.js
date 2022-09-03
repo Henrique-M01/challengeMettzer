@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import initialContent from '../API/initialContent';
+import ScientificCard from './scientificCard';
 
 function ScientificContainer() {
 
   const [wordSearch, setWordSearch] = useState('');
+  const [content, setContent] = useState([]);
 
   useEffect(() => {
-    initialContent();
+    initialContent()
+      .then((data) => setContent(data));
   }, []);
 
 
@@ -24,6 +27,16 @@ function ScientificContainer() {
       >
         Pesquisar
       </button>
+      {content.map((item) => (
+        <ScientificCard
+          key={item._id}
+          title={item._source.title}
+          type={item._type}
+          description={item._source.description}
+          url={item._source.urls}
+          authors={item._source.authors}
+        />
+      ))}
     </main>
   )
 

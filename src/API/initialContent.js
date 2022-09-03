@@ -9,7 +9,7 @@ async function initialContent(wordQuery = 'all', page = 1, pageSize = 10) {
                     ${pageSize}&apiKey=${API_KEY}`;
 
   const result = await axios.get(BASE_URL);
-  
+
   return result.data.data;
 };
 

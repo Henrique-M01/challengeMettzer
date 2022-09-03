@@ -1,4 +1,4 @@
-export default function ScientificCard(title, type, description, url, authors) {
+export default function ScientificCard({title, type, description, url, authors}) {
   return (
     <div>
       <h1>{ title }</h1>
