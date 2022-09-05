@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import initialContent from '../API/initialContent';
-import ScientificCard from './scientificCard';
+import ScientificCard from './scientificCard/scientificCard';
+
 
 function ScientificContainer() {
 
