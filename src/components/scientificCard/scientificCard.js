@@ -11,7 +11,7 @@ export default function ScientificCard({title, type, description, url, authors})
         setChecked(true);
       }
     });
-  }, []);
+  }, [title, type]);
   const setFavoriteLocalStorage = () => {
       const favoriteArticle = {
         title,
