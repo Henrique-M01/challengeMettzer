@@ -46,7 +46,10 @@ export default function CardArticles({title, type, description, url, authors}) {
     <div>
       <h1>{ title }</h1>
       <h3>{ type }</h3>
-      <h4>{ authors[0] }</h4>
+      { 
+        authors.map((author, index) => (
+          <p key={index} >{ author }</p> )) 
+      }
       <p>{ description }</p>
       {
         url.map((link, index) => (
