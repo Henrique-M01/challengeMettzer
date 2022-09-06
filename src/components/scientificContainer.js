@@ -28,7 +28,7 @@ function ScientificContainer() {
           onChange={(e) => setWordSearch(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              initialContent(wordSearch)
+              initialContent(wordSearch, currentPage, 10)
                 .then((data) => setContent(data));
             }
           }}
