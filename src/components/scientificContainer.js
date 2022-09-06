@@ -15,9 +15,10 @@ function ScientificContainer() {
     initialContent(wordSearch, currentPage, 10)
       .then((data) => {
         setContent(data.data);
-        setTotalHits(data.totalHits);
+        setTotalHits(data.totalHits / 100);
       });
-  }, [currentPage, wordSearch]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPage]);
 
   return (
     <main>
@@ -28,16 +29,16 @@ function ScientificContainer() {
           onChange={(e) => setWordSearch(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
-              initialContent(wordSearch, currentPage, 10)
-                .then((data) => setContent(data));
+              initialContent(wordSearch, 1, 10)
+                .then((data) => setContent(data.data));
             }
           }}
         />
       </label>
       <button
         onClick={() => 
-          initialContent(wordSearch)
-            .then((data) => setContent(data))}
+          initialContent(wordSearch, 1, 10)
+            .then((data) => setContent(data.data))}
       >
         Pesquisar
       </button>

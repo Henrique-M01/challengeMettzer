@@ -49,8 +49,8 @@ export default function ScientificCard({title, type, description, url, authors})
       <h4>{ authors[0] }</h4>
       <p>{ description }</p>
       {
-        url.map((link) => (
-          <a href={link} target="_blank" rel="noreferrer">Link</a>))
+        url.map((link, index) => (
+          <a key={index} href={link} target="_blank" rel="noreferrer">Link</a>))
       }
       <input
         type="checkbox"
