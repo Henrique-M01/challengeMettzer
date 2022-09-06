@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function ScientificCard({title, type, description, url, authors}) {
+export default function CardArticles({title, type, description, url, authors}) {
 
   const [checked, setChecked] = useState(false);
 

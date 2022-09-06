@@ -1,12 +1,15 @@
-import Header from './components/header';
-import ScientificContainer from './components/scientificContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Favorites from './pages/favorites';
+import Home from './pages/mainContent';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <ScientificContainer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/favorites" element={<Favorites />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

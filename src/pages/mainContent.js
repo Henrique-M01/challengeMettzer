@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import initialContent from '../API/initialContent';
-import Pagination from './pagination';
-import ScientificCard from './scientificCard/scientificCard';
+import Pagination from '../components/Pagination/pagination';
+import CardArticle from '../components/CardArticles/cardArticles';
+import Header from '../components/header';
 
 
-function ScientificContainer() {
+function Home() {
 
   const [wordSearch, setWordSearch] = useState('all');
   const [content, setContent] = useState([]);
@@ -22,6 +23,7 @@ function ScientificContainer() {
 
   return (
     <main>
+      <Header />
       <label htmlFor="searchScientific">
         <input
           id="searchScientific"
@@ -43,7 +45,7 @@ function ScientificContainer() {
         Pesquisar
       </button>
       {content.map((item) => (
-        <ScientificCard
+        <CardArticle
           key={item._id}
           title={item._source.title}
           type={item._type}
@@ -64,4 +66,4 @@ function ScientificContainer() {
 
 }
 
-export default ScientificContainer;
+export default Home;

@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { usePagination, DOTS } from '../Hooks/usePagination';
+import { usePagination, DOTS } from '../../Hooks/usePagination';
 
 const Pagination = props => {
   const {
