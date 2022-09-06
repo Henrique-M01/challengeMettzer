@@ -10,7 +10,7 @@ async function initialContent(wordQuery = 'all', page = 1, pageSize = 10) {
 
   const result = await axios.get(BASE_URL);
 
-  return result.data.data;
+  return result.data;
 };
 
 export default initialContent;
