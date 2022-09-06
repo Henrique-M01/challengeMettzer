@@ -6,19 +6,18 @@ import ScientificCard from './scientificCard/scientificCard';
 
 function ScientificContainer() {
 
-  const [wordSearch, setWordSearch] = useState('');
+  const [wordSearch, setWordSearch] = useState('all');
   const [content, setContent] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalHits, setTotalHits] = useState(0);
 
   useEffect(() => {
-    initialContent()
+    initialContent(wordSearch, currentPage, 10)
       .then((data) => {
         setContent(data.data);
         setTotalHits(data.totalHits);
       });
-  }, []);
-
+  }, [currentPage, wordSearch]);
 
   return (
     <main>
