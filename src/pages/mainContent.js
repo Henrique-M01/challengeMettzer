@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import initialContent from '../API/initialContent';
 import Pagination from '../components/Pagination/pagination';
 import CardArticle from '../components/CardArticles/cardArticles';
-import Header from '../components/header';
+import Header from '../components/Header/header';
 
 
 function Home() {
@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <main>
-      <Header />
+      <Header currentPage="home" />
       <label htmlFor="searchScientific">
         <input
           id="searchScientific"
