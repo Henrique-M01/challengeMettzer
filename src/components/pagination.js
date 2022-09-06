@@ -18,7 +18,6 @@ const Pagination = props => {
     siblingCount,
     pageSize
   });
-  // console.log(paginationRange);
 
   if (currentPage === 0 || paginationRange.length < 2) {
     return null;
@@ -36,8 +35,10 @@ const Pagination = props => {
   return (
     <ul
       className={classnames('pagination-container', { [className]: className })}
+      decoration="none"
     >
       <li
+        decoration="none"
         className={classnames('pagination-item', {
           disabled: currentPage === 1
         })}
