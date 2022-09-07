@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import CardArticle from '../components/CardArticles/cardArticles';
 import Header from '../components/Header/header';
+import Pagination from '../components/Pagination/pagination';
 
 export default function Favorites() {
 
   const [favorite, setFavorite] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const favoriteLocalStorage = JSON.parse(localStorage.getItem('favorite')) || [];
@@ -12,7 +14,7 @@ export default function Favorites() {
       setFavorite(favoriteLocalStorage);
     }
 
-  }, [favorite]);
+  }, []);
 
   return (
     <div>
@@ -26,7 +28,15 @@ export default function Favorites() {
           description={item.description}
           url={item.url}
           authors={item.authors}
-        />))}
+        />
+      ))}
+      <Pagination 
+        className="pagination-favorite"
+        totalCount={favorite.length - 1}
+        currentPage={currentPage}
+        pageSize={10}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
     </div>
   )
 }
