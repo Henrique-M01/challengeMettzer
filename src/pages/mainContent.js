@@ -29,6 +29,7 @@ function Home() {
         <div className='search-container'>
           <label htmlFor="searchScientific">
             <input
+              className='input-search'
               id="searchScientific"
               type="text"
               onChange={(e) => setWordSearch(e.target.value)}
@@ -41,6 +42,7 @@ function Home() {
             />
           </label>
           <button
+            className='search-button'
             onClick={() => 
               initialContent(wordSearch, 1, 12)
                 .then((data) => setContent(data.data))}
