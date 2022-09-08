@@ -45,6 +45,10 @@
 }
 
 .favorite-checkbox{
+  display: flex;
+  align-items: baseline;
+  margin-left: 36%;
+  margin-top: 10px;
   font-size: large;
 }
 
