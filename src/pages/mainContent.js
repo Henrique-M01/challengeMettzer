@@ -14,7 +14,7 @@ function Home() {
   const [totalHits, setTotalHits] = useState(0);
 
   useEffect(() => {
-    initialContent(wordSearch, currentPage, 10)
+    initialContent(wordSearch, currentPage, 12)
       .then((data) => {
         setContent(data.data);
         setTotalHits(data.totalHits / 100);
@@ -34,7 +34,7 @@ function Home() {
               onChange={(e) => setWordSearch(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
-                  initialContent(wordSearch, 1, 10)
+                  initialContent(wordSearch, 1, 12)
                     .then((data) => setContent(data.data));
                 }
               }}
@@ -42,7 +42,7 @@ function Home() {
           </label>
           <button
             onClick={() => 
-              initialContent(wordSearch, 1, 10)
+              initialContent(wordSearch, 1, 12)
                 .then((data) => setContent(data.data))}
           >
             Pesquisar

@@ -3,8 +3,7 @@
   --background-header: #b5f25f;
   --tertiary-color: #9cee45;
   --text-color: #424C56
-  /* .color3 { #cef779 };
-  .color5 { #ffffac }; */
+  --secondary-text-color: #C0C0C0;
 }
 
 body, #root {

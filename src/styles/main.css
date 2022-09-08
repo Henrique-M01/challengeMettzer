@@ -6,7 +6,7 @@
   display: flex;
   max-width: 1300px;
   margin: auto;
-  align-items: top;
+  align-items: stretch;
   justify-content: space-between;
   flex-wrap: wrap;
 }
