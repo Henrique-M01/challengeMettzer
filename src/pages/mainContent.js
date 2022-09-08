@@ -3,6 +3,7 @@ import initialContent from '../API/initialContent';
 import Pagination from '../components/Pagination/pagination';
 import CardArticle from '../components/CardArticles/cardArticles';
 import Header from '../components/Header/header';
+import '../styles/main.css';
 
 
 function Home() {
@@ -13,7 +14,7 @@ function Home() {
   const [totalHits, setTotalHits] = useState(0);
 
   useEffect(() => {
-    initialContent(wordSearch, currentPage, 10)
+    initialContent(wordSearch, currentPage, 12)
       .then((data) => {
         setContent(data.data);
         setTotalHits(data.totalHits / 100);
@@ -22,46 +23,54 @@ function Home() {
   }, [currentPage]);
 
   return (
-    <main>
+    <div>
       <Header currentPage="home" />
-      <label htmlFor="searchScientific">
-        <input
-          id="searchScientific"
-          type="text"
-          onChange={(e) => setWordSearch(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              initialContent(wordSearch, 1, 10)
-                .then((data) => setContent(data.data));
-            }
-          }}
-        />
-      </label>
-      <button
-        onClick={() => 
-          initialContent(wordSearch, 1, 10)
-            .then((data) => setContent(data.data))}
-      >
-        Pesquisar
-      </button>
-      {content.map((item) => (
-        <CardArticle
-          key={item._id}
-          title={item._source.title}
-          type={item._type}
-          description={item._source.description}
-          url={item._source.urls}
-          authors={item._source.authors}
-        />
-      ))}
+      <main className='main'>
+        <div className='search-container'>
+          <label htmlFor="searchScientific">
+            <input
+              className='input-search'
+              id="searchScientific"
+              type="text"
+              onChange={(e) => setWordSearch(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  initialContent(wordSearch, 1, 12)
+                    .then((data) => setContent(data.data));
+                }
+              }}
+            />
+          </label>
+          <button
+            className='search-button'
+            onClick={() => 
+              initialContent(wordSearch, 1, 12)
+                .then((data) => setContent(data.data))}
+          >
+            Pesquisar
+          </button>
+        </div>
+        <div className='main-content'>
+        {content.map((item) => (
+          <CardArticle
+            key={item._id}
+            title={item._source.title}
+            type={item._type}
+            description={item._source.description}
+            url={item._source.urls}
+            authors={item._source.authors}
+          />
+        ))}
+        </div>
+      </main>
       <Pagination 
         className="pagination-bar"
         totalCount={totalHits}
         currentPage={currentPage}
-        pageSize={10}
+        pageSize={12}
         onPageChange={(page) => setCurrentPage(page)}
       />
-    </main>
+    </div>
   )
 
 }

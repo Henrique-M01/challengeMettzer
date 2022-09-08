@@ -1,0 +1,24 @@
+.header-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+  height: 130px;
+  background-color: var(--background-header);
+  color: var(--text-color);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.btn-navigation{
+  padding: 10px;
+  font-size: large;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 5px;
+}
+
+.btn-navigation:hover{
+  background-color: var(--tertiary-color);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
