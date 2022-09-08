@@ -1,0 +1,12 @@
+.main{
+  background-color: var(--background);
+}
+
+.main-content{
+  display: flex;
+  max-width: 1300px;
+  margin: auto;
+  align-items: top;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
