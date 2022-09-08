@@ -45,3 +45,11 @@
   padding: 12px 20px;
   box-sizing: border-box;
 }
+
+.title-favorite{
+  display: flex;
+  justify-content: center;
+  color: rgb(28,28,28);
+  font-size: xx-large;
+  font-weight: bold;
+}

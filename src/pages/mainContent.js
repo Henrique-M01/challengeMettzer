@@ -67,7 +67,7 @@ function Home() {
         className="pagination-bar"
         totalCount={totalHits}
         currentPage={currentPage}
-        pageSize={10}
+        pageSize={12}
         onPageChange={(page) => setCurrentPage(page)}
       />
     </div>
